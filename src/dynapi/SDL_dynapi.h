@@ -71,9 +71,8 @@
 #define SDL_DYNAMIC_API 0 // we need dlopen(), but don't have it....
 #endif
 
-// everyone else. This is where we turn on the API if nothing forced it off.
-#ifndef SDL_DYNAMIC_API
-#define SDL_DYNAMIC_API 1
-#endif
+// Force-disable dynapi everywhere
+#undef SDL_DYNAMIC_API
+#define SDL_DYNAMIC_API 0
 
 #endif
